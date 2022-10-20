@@ -1,37 +1,39 @@
+import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from './employee';
 
+//provide in root or include in app modules
 @Injectable({
   providedIn: 'root',
 })
 export class EmployeeService {
-  private apiSeverUrl = '';
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 
   public getEmployees(): Observable<Employee[]> {
-    return this.http.get<any>(`${this.apiSeverUrl}/employee/all`);
+    return this.http.get<any>(`${this.apiServerUrl}/employee/all`);
   }
 
   public addEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(
-      `${this.apiSeverUrl}/employee/add`,
+      `${this.apiServerUrl}/employee/add`,
       employee
     );
   }
 
   public updateEmployee(employee: Employee): Observable<Employee> {
     return this.http.put<Employee>(
-      `${this.apiSeverUrl}/employee/update`,
+      `${this.apiServerUrl}/employee/update`,
       employee
     );
   }
 
   public deleteEmployee(employeeId: number): Observable<void> {
     return this.http.delete<void>(
-      `${this.apiSeverUrl}/employee/delete/${employeeId}`
+      `${this.apiServerUrl}/employee/delete/${employeeId}`
     );
   }
 }
