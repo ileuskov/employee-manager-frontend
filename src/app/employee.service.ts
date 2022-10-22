@@ -5,9 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Employee } from './employee';
 
 //provide in root or include in app modules
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EmployeeService {
   private apiServerUrl = environment.apiBaseUrl;
 
