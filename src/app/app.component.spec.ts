@@ -1,31 +1,19 @@
-import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { EmployeeService } from './employee.service';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+  let component: AppComponent;
+  let employeeService: EmployeeService;
+
+  beforeEach(() => {
+    component = new AppComponent(employeeService);
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create the AppComponent', () => {
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'employee-manager-frontend'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('employee-manager-frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('employee-manager-frontend app is running!');
+    expect(component.title).toEqual('employee-manager-frontend');
   });
 });
