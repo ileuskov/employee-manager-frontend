@@ -1,27 +1,29 @@
-# EmployeeManagerFrontend
+# Employee Manager App Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+# General Info
 
-## Development server
+This is an Angular 14 Web App that is connected to the Spring Boot + MySQL backend
+The app's main function is to recreate basic employee manager system.
+All the data is fetched for the MySQL database via api calls through Spring Boot Service layer
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Features included
 
-## Code scaffolding
+1. Ability to add new employees via Angular Forms (employees added to the DB)
+2. Ability to edit existing employees via Angular Forms (employees edited in the DB)
+3. Ability to delete existing employees (employees deleted in the DB)
+4. Possibility to search employees by their names, email, phone or/and their job title
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Technologies used
 
-## Build
+1. Angular 14
+2. Bootstrap 4
+3. Karma & Jasmine for unit & integration testing
+4. GitHub Actions for CI/CD Pipeline
+5. ESLint for linting
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# To start the app:
 
-## Running unit tests
+1. ng serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Make sure the backend is running!
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
